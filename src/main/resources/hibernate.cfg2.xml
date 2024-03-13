@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Thiết lập kết nối cơ sở dữ liệu -->
+        <property name="hibernate.connection.driver_class">
+            com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="hibernate.connection.url">
+            jdbc:sqlserver://localhost:1433;database=final2;TrustServerCertificate=true; </property>
+        <!-- Thiết lập username -->
+        <property name="hibernate.connection.username">sa</property>
+        <!-- Thiết lập password -->
+        <property name="hibernate.connection.password">Tuanvu1993@</property>
+
+        <!-- Pool kết nối JDBC (sử dụng pool tích hợp) -->
+        <property name="hibernate.connection.pool_size">1</property>
+
+        <!-- SQL dialect cấu hình sql server cho hibernate -->
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+        <!-- Drop và tạo lại schema của cơ sở dữ liệu khi khởi động ứng dụng -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Thêm các tập tin ánh xạ entity của bạn ở đây -->
+        <mapping class="finals.entities.LOAI_KHACH_HANG" />
+        <mapping class="finals.entities.KHACH_HANG" />
+        <mapping class="finals.entities.DICH_VU" />
+        <mapping class="finals.entities.NHAN_VIEN" />
+        <mapping class="finals.entities.LICH_SU_CHAM_SOC" />
+
+
+    </session-factory>
+</hibernate-configuration>
